@@ -19,6 +19,10 @@ notes -l          lists all notes
 
 replace NAME with your notes name
 ```
+you most likely want to use ``` notes -l ``` in your rc file
+
+so then you get a reminder to do stuff whenever you open your terminal
+
 # config.h
 A config.h is avalible
 
@@ -26,6 +30,6 @@ it functions just like in other suckless software
 
 it controls the DIR where the notes are stored, this has to be a full DIR 
 
-so no using ``` ~/.cache/notes ``` as this will break it 
+so no using ``` ~/ ``` as this will break it 
 
 by default it is set to ``` /etc/notes ```
