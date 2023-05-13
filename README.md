@@ -33,3 +33,5 @@ it controls the DIR where the notes are stored, this has to be a full DIR
 so no using ``` ~/ ``` as this will break it 
 
 by default it is set to ``` /etc/notes ```
+
+id recomend you use ``` chmod -R a=wr  /etc/notes ``` so you can edit this without root
