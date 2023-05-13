@@ -10,7 +10,7 @@ make
 make install
 ```
 
-# usage 
+# Usage 
 ```
 notes -s NAME     sets a new note
 notes -r NAME     reads a existing note
