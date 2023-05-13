@@ -73,6 +73,7 @@ void Read(char name[]){
 		printf("%c",c);
 	} 
 	fclose(fptr);
+	exit(0);
 
 }
 
