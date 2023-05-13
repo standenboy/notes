@@ -87,6 +87,7 @@ void List(){
 		}
 		closedir(d);
 	}
+	exit(0);
 }
 
 
