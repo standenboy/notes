@@ -52,7 +52,8 @@ void Delete(char name[]){
 	if (ret != 0){
 		printf("failed to delete file %s\n",dir);
 		exit(3);
-	}	
+	}
+	exit(0);
 }
 
 void Read(char name[]){
