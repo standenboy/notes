@@ -82,9 +82,28 @@ void List(){
 	DIR *d;
 	struct dirent *dir;
 	d = opendir(DIRC);
+	printf("NAME	DUE\n");
+
 	if (d){
 		while ((dir = readdir(d)) != NULL){
-	 		printf("%s\n", dir->d_name);
+			char *fileName = dir->d_name;
+		        if (strcmp(fileName,".") && strcmp(fileName,"..")){	
+				char dir[] = DIRC;
+
+				strcat(dir, fileName);
+
+				FILE *fptr;
+				fptr = fopen(dir, "r");
+				if (fptr == NULL){
+					printf("failed to read files\n");
+					exit(4);
+				}
+
+				char dueDate[15];
+				fscanf(fptr, "%s", dueDate);
+				
+	 			printf("%s 	%s\n", fileName, dueDate);
+			}
 		}
 		closedir(d);
 	}
