@@ -1,1 +1,1 @@
-#define DIRC "/etc/notes"
+#define DIRC "/etc/notes/"
