@@ -1,1 +1,1 @@
-#define DIRC "/home/standenboy/.cache/notes/"
+#define DIRC "/etc/notes"
