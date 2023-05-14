@@ -82,12 +82,17 @@ void listNotes(){
 	DIR *d;
 	struct dirent *dir;
 	d = opendir(DIRC);
-	printf("| NAME | DUE |\n");
 
 	if (d){
+		int i = 0;
 		while ((dir = readdir(d)) != NULL){
 			char *fileName = dir->d_name;
 		        if (strcmp(fileName,".") && strcmp(fileName,"..")){	
+				if (i == 0){	
+					printf("| NAME | DUE |\n");
+				} 
+				i++;	
+
 				char dir[] = DIRC;
 
 				strcat(dir, fileName);
