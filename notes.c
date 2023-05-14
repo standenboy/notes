@@ -13,7 +13,7 @@ void syntaxError(){
 	exit(1);
 }
 
-void Set(char name[]){
+void setNote(char name[]){
 	FILE *fptr;
 	char dir[] = DIRC;
 
@@ -44,7 +44,7 @@ void Set(char name[]){
 	fclose(fptr);
 }
 
-void Delete(char name[]){
+void deleteNote(char name[]){
 	char dir[] = DIRC;
 	strcat(dir, name);
 
@@ -56,7 +56,7 @@ void Delete(char name[]){
 	exit(0);
 }
 
-void Read(char name[]){
+void readNote(char name[]){
 
 	FILE *fptr;
 	char dir[] = DIRC;
@@ -78,7 +78,7 @@ void Read(char name[]){
 
 }
 
-void List(){
+void listNotes(){
 	DIR *d;
 	struct dirent *dir;
 	d = opendir(DIRC);
@@ -117,7 +117,7 @@ int main(int argc, char *argv[]){
 	}
 	if (!strcmp(argv[1], "-s") || !strcmp(argv[1],"--set")){
 		if (argc >= 3){
-			Set(argv[2]);
+			setNote(argv[2]);
 		}
 		else{
 			syntaxError();
@@ -126,7 +126,7 @@ int main(int argc, char *argv[]){
 	}
 	else if (!strcmp(argv[1], "-d") || !strcmp(argv[1],"--delete")){
 		if (argc >= 3){
-			Delete(argv[2]);
+			deleteNote(argv[2]);
 		}
 		else{
 			syntaxError();
@@ -135,14 +135,14 @@ int main(int argc, char *argv[]){
 	
 	else if (!strcmp(argv[1], "-r") || !strcmp(argv[1],"--read")){
 		if (argc >= 3){
-			Read(argv[2]);
+			readNote(argv[2]);
 		}
 		else{
 			syntaxError();
 		}
 	}
 	else if (!strcmp(argv[1], "-l") || !strcmp(argv[1],"--list")){
-		List();
+		listNotes();
 	}
 	else{
 		syntaxError();
@@ -151,6 +151,3 @@ int main(int argc, char *argv[]){
 	return 0;
 
 }
-
-
-
