@@ -115,38 +115,29 @@ int main(int argc, char *argv[]){
 	if (argc <= 1){
 		syntaxError();
 	}
+
 	if (!strcmp(argv[1], "-s") || !strcmp(argv[1],"--set")){
 		if (argc >= 3){
 			setNote(argv[2]);
 		}
-		else{
-			syntaxError();
-		}
-			
-	}
-	else if (!strcmp(argv[1], "-d") || !strcmp(argv[1],"--delete")){
-		if (argc >= 3){
+		else{ syntaxError(); }	
+	
+	}else if (!strcmp(argv[1], "-d") || !strcmp(argv[1],"--delete")){
+		if (argc >= 3){	
 			deleteNote(argv[2]);
 		}
-		else{
-			syntaxError();
-		}
-	}
+		else{ syntaxError(); }
 	
-	else if (!strcmp(argv[1], "-r") || !strcmp(argv[1],"--read")){
+	}else if (!strcmp(argv[1], "-r") || !strcmp(argv[1],"--read")){
 		if (argc >= 3){
 			readNote(argv[2]);
 		}
-		else{
-			syntaxError();
-		}
-	}
-	else if (!strcmp(argv[1], "-l") || !strcmp(argv[1],"--list")){
+		else{ syntaxError(); }
+	
+	}else if (!strcmp(argv[1], "-l") || !strcmp(argv[1],"--list")){
 		listNotes();
-	}
-	else{
-		syntaxError();
-	}
+	
+	}else{ syntaxError(); }
 	
 	return 0;
 
