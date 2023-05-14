@@ -82,7 +82,7 @@ void listNotes(){
 	DIR *d;
 	struct dirent *dir;
 	d = opendir(DIRC);
-	printf("NAME	DUE\n");
+	printf("| NAME | DUE |\n");
 
 	if (d){
 		while ((dir = readdir(d)) != NULL){
@@ -102,7 +102,7 @@ void listNotes(){
 				char dueDate[15];
 				fscanf(fptr, "%s", dueDate);
 				
-	 			printf("%s 	%s\n", fileName, dueDate);
+	 			printf("| %s | %s |\n", fileName, dueDate);
 			}
 		}
 		closedir(d);
