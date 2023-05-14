@@ -9,7 +9,7 @@
 #include "config.h" 
 
 void syntaxError(){	
-	printf("invalid syntax, use --set --delete --list (-s -d -l)\n");
+	printf("invalid syntax, use --set --delete --read --list (-s -d -r -l)\n");
 	exit(1);
 }
 
